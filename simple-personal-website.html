@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Personnel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jean Dupont</h1>
+        <h2>Mes diplômes</h2>
+        <ul>
+            <li>Master en Informatique - <a href="https://www.u-pec.fr/" target="_blank">Université Paris-Est Créteil (UPEC)</a></li>
+            <li>Licence en Mathématiques</li>
+            <li>Baccalauréat Scientifique</li>
+        </ul>
+        <p>Pour en savoir plus sur mes loisirs, consultez ma <a href="hobbies.html">page de hobbies</a>.</p>
+    </div>
+
+    <script>
+        // Script pour créer dynamiquement la page hobbies.html
+        const hobbiesContent = `
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Hobbies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mes Hobbies</h1>
+        <p>Voici quelques-unes de mes activités préférées :</p>
+        <ul>
+            <li>Photographie : J'aime capturer des moments uniques et explorer différentes techniques photographiques.</li>
+            <li>Randonnée : Les weekends, je pars souvent à la découverte de nouveaux sentiers et paysages.</li>
+            <li>Lecture : Je suis passionné par les romans de science-fiction et les ouvrages sur l'histoire des sciences.</li>
+            <li>Cuisine : J'adore expérimenter de nouvelles recettes, particulièrement des plats du monde entier.</li>
+        </ul>
+        <p><a href="index.html">Retour à la page principale</a></p>
+    </div>
+</body>
+</html>
+        `;
+
+        // Créer un blob avec le contenu HTML
+        const blob = new Blob([hobbiesContent], { type: 'text/html' });
+
+        // Créer un lien de téléchargement pour hobbies.html
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'hobbies.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    </script>
+</body>
+</html>
